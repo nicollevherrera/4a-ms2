@@ -17,5 +17,15 @@ public class TicketController {
     @GetMapping("/ticket/{name}")
     List<Ticket> getName(@PathVariable String name){
         return ticketRepository.findByname(name);
+
+    }@GetMapping("/tickets")
+    List<Ticket> ListTickets (){
+        return  ticketRepository.findAll();
+    }
+
+    @PostMapping("/ticket")
+    Ticket newTicket(@RequestBody Ticket ticket){
+    return ticketRepository.save(ticket);
     }
 }
+
