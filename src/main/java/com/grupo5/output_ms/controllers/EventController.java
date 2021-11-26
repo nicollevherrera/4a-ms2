@@ -16,11 +16,11 @@ public class EventController {
         this.eventRepository = eventRepository;
     }
 
-    @GetMapping("/evento/id")
+    @GetMapping("/evento/{id}")
     Event getIdevent(@PathVariable Integer idevent){
         return eventRepository.findById(idevent)
                 .orElseThrow(
-                        () -> new EventNotFoundException("404"));
+                        () -> new EventNotFoundException("Error: NO DATA"));
     }
 
     @GetMapping ("/evento")

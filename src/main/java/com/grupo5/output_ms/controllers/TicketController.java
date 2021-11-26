@@ -2,6 +2,8 @@ package com.grupo5.output_ms.controllers;
 
 import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.TicketRepository;
+import exceptions.EventNotFoundException;
+import exceptions.TicketNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -17,6 +19,9 @@ public class TicketController {
     @GetMapping("/ticket/{name}")
     List<Ticket> getName(@PathVariable String name){
         return ticketRepository.findByname(name);
+                //.orElseThrow(
+                //        () -> new TicketNotFoundException("Error: NO DATA"));;
+
 
     }@GetMapping("/tickets")
     List<Ticket> ListTickets (){
