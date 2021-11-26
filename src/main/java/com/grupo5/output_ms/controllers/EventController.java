@@ -16,24 +16,26 @@ public class EventController {
         this.eventRepository = eventRepository;
     }
 
-    @GetMapping("/evento/{id}")
+    @GetMapping("/event/{idevent}")
     Event getIdevent(@PathVariable Integer idevent){
         return eventRepository.findById(idevent)
                 .orElseThrow(
                         () -> new EventNotFoundException("Error: NO DATA"));
     }
 
-    @GetMapping ("/evento")
+    @GetMapping ("/events/")
     List<Event> listEvent(){
         return eventRepository.findAll();
     }
 
-    @PostMapping("/evento")
+    //exception event 200
+
+    @PostMapping("/event/")
     Event newEvent(@RequestBody Event event){
         return eventRepository.save(event);
     }
 
-    @DeleteMapping("/evento/{id}")
+    @DeleteMapping("/event/{idevent}")
     void deleteEvent(@PathVariable String idevent){
         eventRepository.deleteById(Integer.valueOf(idevent));
     }
