@@ -1,4 +1,4 @@
-package controllers;
+package com.grupo5.output_ms.controllers;
 
 import com.grupo5.output_ms.repositories.SaleRepository;
 import org.springframework.web.bind.annotation.*;

@@ -1,4 +1,4 @@
-package controllers;
+package com.grupo5.output_ms.controllers;
 
 import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.TicketRepository;

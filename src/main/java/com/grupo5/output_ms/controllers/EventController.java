@@ -1,4 +1,4 @@
-package controllers;
+package com.grupo5.output_ms.controllers;
 
 import com.grupo5.output_ms.models.Event;
 import com.grupo5.output_ms.repositories.EventRepository;
@@ -16,8 +16,8 @@ public class EventController {
     }
 
     @GetMapping("/evento/id")
-    Optional<Event> getIdevent(@PathVariable Integer id){
-        return eventRepository.findById(id);
+    Optional<Event> getIdevent(@PathVariable Integer idevent){
+        return eventRepository.findById(idevent);
     }
 
     @GetMapping ("/eventos")
