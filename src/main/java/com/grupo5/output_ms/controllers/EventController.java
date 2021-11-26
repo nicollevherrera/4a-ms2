@@ -20,7 +20,7 @@ public class EventController {
         return eventRepository.findById(idevent);
     }
 
-    @GetMapping ("/eventos")
+    @GetMapping ("/evento")
     List<Event> listEvent(){
         return eventRepository.findAll();
     }
@@ -28,5 +28,10 @@ public class EventController {
     @PostMapping("/evento")
     Event newEvent(@RequestBody Event event){
         return eventRepository.save(event);
+    }
+
+    @DeleteMapping("/evento/{id}")
+    void deleteEvent(@PathVariable String idevent){
+        eventRepository.deleteById(Integer.valueOf(idevent));
     }
 }
