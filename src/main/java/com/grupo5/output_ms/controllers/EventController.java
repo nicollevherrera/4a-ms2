@@ -2,6 +2,7 @@ package com.grupo5.output_ms.controllers;
 
 import com.grupo5.output_ms.models.Event;
 import com.grupo5.output_ms.repositories.EventRepository;
+import exceptions.EventNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -16,8 +17,10 @@ public class EventController {
     }
 
     @GetMapping("/evento/id")
-    Optional<Event> getIdevent(@PathVariable Integer idevent){
-        return eventRepository.findById(idevent);
+    Event getIdevent(@PathVariable Integer idevent){
+        return eventRepository.findById(idevent)
+                .orElseThrow(
+                        () -> new EventNotFoundException("404"));
     }
 
     @GetMapping ("/evento")
