@@ -1,5 +1,6 @@
 package com.grupo5.output_ms.controllers;
 import com.grupo5.output_ms.exceptions.SaleNotFoundException;
+import com.grupo5.output_ms.models.Event;
 import com.grupo5.output_ms.models.Sale;
 import com.grupo5.output_ms.repositories.SaleRepository;
 import org.springframework.web.bind.annotation.*;
@@ -35,5 +36,13 @@ public class SaleController {
         saleRepository.deleteById(idsale);
     }
 
-
+    //Actualizar un venta
+    @PutMapping("/event/{idsale}")
+    Sale updateSale(@PathVariable String idsale, @RequestBody Sale new_sale){
+        Sale old_sale = saleRepository.findById(idsale).orElse(null);
+        old_sale.setPrice(new_sale.getPrice());
+        old_sale.setQuantity(new_sale.getQuantity());
+        old_sale.setStatus(new_sale.getStatus());
+        return saleRepository.save(old_sale);
+    }
 }

@@ -1,4 +1,5 @@
 package com.grupo5.output_ms.controllers;
+import com.grupo5.output_ms.models.Sale;
 import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.TicketRepository;
 import com.grupo5.output_ms.exceptions.TicketNotFoundException;
@@ -51,5 +52,16 @@ public class TicketController {
         ticketRepository.deleteById(idticket);
     }
 
-
+    //Actualizar un ticket
+    @PutMapping("/event/{idticket}")
+    Ticket updateTicket(@PathVariable String idticket, @RequestBody Ticket new_ticket){
+        Ticket old_ticket = ticketRepository.findById(idticket).orElse(null);
+        old_ticket.setType(new_ticket.getType());
+        old_ticket.setPrice(new_ticket.getPrice());
+        old_ticket.setName(new_ticket.getName());
+        old_ticket.setAddress(new_ticket.getAddress());
+        old_ticket.setDate(new_ticket.getDate());
+        old_ticket.setHour(new_ticket.getHour());
+        return ticketRepository.save(old_ticket);
+    }
 }

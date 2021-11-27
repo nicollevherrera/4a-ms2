@@ -42,5 +42,17 @@ public class EventController {
         eventRepository.deleteById(idevent);
     }
 
-
+    //Actualizar un evento
+    @PutMapping("/event/{idevent}")
+    Event updateEvent(@PathVariable String idevent, @RequestBody Event new_event){
+        Event old_event = eventRepository.findById(idevent).orElse(null);
+        old_event.setName(new_event.getName());
+        old_event.setOrganizer(new_event.getOrganizer());
+        old_event.setDate(new_event.getDate());
+        old_event.setHour(new_event.getHour());
+        old_event.setCity(new_event.getHour());
+        old_event.setCity(new_event.getCity());
+        old_event.setAddress(new_event.getAddress());
+        return eventRepository.save(old_event);
+    }
 }
