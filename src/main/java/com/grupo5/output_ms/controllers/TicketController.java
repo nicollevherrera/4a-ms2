@@ -1,6 +1,7 @@
 package com.grupo5.output_ms.controllers;
 import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.TicketRepository;
+import com.grupo5.output_ms.exceptions.TicketNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -24,15 +25,16 @@ public class TicketController {
 
     //traer los tickets por nombre
     @GetMapping("/tickets/{name}")
-    List<Ticket> getName(@PathVariable String name){
+    List <Ticket> getName(@PathVariable String name){
         return ticketRepository.findByName(name);
     }
 
 
     //traer ticket pot id
     @GetMapping("/ticket/{idticket}")
-    Optional <Ticket> getTicket(@PathVariable String idticket){
-        return ticketRepository.findById(idticket);
+    Ticket getTicket(@PathVariable String idticket){
+        return ticketRepository.findById(idticket)
+                .orElseThrow(() -> new TicketNotFoundException("No existe el ticket: " + idticket));
     }
 
 

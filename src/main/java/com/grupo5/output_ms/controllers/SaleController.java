@@ -1,4 +1,5 @@
 package com.grupo5.output_ms.controllers;
+import com.grupo5.output_ms.exceptions.SaleNotFoundException;
 import com.grupo5.output_ms.models.Sale;
 import com.grupo5.output_ms.repositories.SaleRepository;
 import org.springframework.web.bind.annotation.*;
@@ -22,8 +23,10 @@ public class SaleController {
 
     //traer una venta especifica
     @GetMapping("/sale/{idsale}")
-    Optional <Sale> getEvent(@PathVariable String idsale){
-        return saleRepository.findById(idsale);
+    Sale getEvent(@PathVariable String idsale){
+        return saleRepository.findById(idsale)
+                .orElseThrow(
+                        () -> new SaleNotFoundException("No hay venta registrada como: " + idsale));
     }
 
     //eliminar una venta
