@@ -37,7 +37,7 @@ public class SaleController {
     }
 
     //Actualizar un venta
-    @PutMapping("/event/{idsale}")
+    @PutMapping("/sale/{idsale}")
     Sale updateSale(@PathVariable String idsale, @RequestBody Sale new_sale){
         Sale old_sale = saleRepository.findById(idsale).orElse(null);
         old_sale.setPrice(new_sale.getPrice());

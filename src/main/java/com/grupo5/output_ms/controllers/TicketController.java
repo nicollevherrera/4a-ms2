@@ -53,7 +53,7 @@ public class TicketController {
     }
 
     //Actualizar un ticket
-    @PutMapping("/event/{idticket}")
+    @PutMapping("/ticket/{idticket}")
     Ticket updateTicket(@PathVariable String idticket, @RequestBody Ticket new_ticket){
         Ticket old_ticket = ticketRepository.findById(idticket).orElse(null);
         old_ticket.setType(new_ticket.getType());
