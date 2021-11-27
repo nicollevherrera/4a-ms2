@@ -8,7 +8,7 @@ import java.util.Date;
 public class Ticket  {
 
     @Id
-    private Integer idticket;
+    private String idticket;
     @NonNull
     private String type;
     @NonNull
@@ -24,7 +24,7 @@ public class Ticket  {
     private String country;
 
 
-    public Ticket(Integer idticket, @NonNull String type, @NonNull BigDecimal price, @NonNull String name,
+    public Ticket(String idticket, @NonNull String type, @NonNull BigDecimal price, @NonNull String name,
                   String address, Date date, String hour, @NonNull String city, @NonNull String country) {
 
         this.idticket = idticket;
@@ -39,13 +39,13 @@ public class Ticket  {
     }
 
 
-    public void setIdticket(Integer idticket) {
+    public void setIdticket(String idticket) {
         this.idticket = idticket;
     }
-    public Integer getIdticket() {
+
+    public String getIdticket() {
         return idticket;
     }
-
 
     public void setType(@NonNull String type) {
         this.type = type;
@@ -114,7 +114,5 @@ public class Ticket  {
     public String getAddress() {
         return address;
     }
-
-
 
 }

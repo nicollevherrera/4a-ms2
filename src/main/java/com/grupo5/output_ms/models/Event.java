@@ -6,8 +6,8 @@ import java.util.Date;
 public class Event {
 
     @Id
-    private Integer idevent;
-    private Integer iduser;
+    private String idevent;
+    private String userid;
     @NonNull
     private String  name;
     @NonNull
@@ -21,11 +21,11 @@ public class Event {
     private String country;
     private String address;
 
-    public Event(Integer idevent, Integer iduser, String name,String organizer,Date date,
+    public Event(String idevent, String userid, String name,String organizer,Date date,
                  String hour, String city, String country, String address){
 
         this.idevent = idevent;
-        this.iduser = iduser;
+        this.userid = userid;
         this.name = name;
         this.organizer = organizer;
         this.date = date;
@@ -36,13 +36,13 @@ public class Event {
 
     }
 
-    public void setIdevent(Integer idevent) {
+    public void setIdevent(String idevent) {
         this.idevent = idevent;
     }
-    public Integer getIdevent() {
+
+    public String getIdevent() {
         return idevent;
     }
-
 
     public void setName(@NonNull String name) {
         this.name = name;
@@ -105,10 +105,10 @@ public class Event {
     }
 
 
-    public void setIduser(Integer iduser) {
-        this.iduser = iduser;
+    public void setUserid(String userid) {
+        this.userid = userid;
     }
-    public Integer getIduser() {
-        return iduser;
+    public String getUserid() {
+        return userid;
     }
 }

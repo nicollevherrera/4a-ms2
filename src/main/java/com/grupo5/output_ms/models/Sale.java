@@ -6,26 +6,26 @@ import java.math.BigDecimal;
 
 public class Sale {
     @Id
-    private Integer idsale;
+    private String idsale;
     @NonNull
     private String status;
     private BigDecimal price;
     private Integer quantity;
 
-    public Sale (Integer idsale, String status, BigDecimal price, Integer quantity) {
+    public Sale (String idsale, String status, BigDecimal price, Integer quantity) {
         this.idsale = idsale;
         this.status = status;
         this.price = price;
         this.quantity = quantity;
     }
 
-    public void setIdsale(Integer idsale) {
+    public void setIdsale(String idsale) {
         this.idsale = idsale;
     }
-    public Integer getIdsale() {
+
+    public String getIdsale() {
         return idsale;
     }
-
 
     public void setStatus(@NonNull String status) {
         this.status = status;
@@ -52,6 +52,9 @@ public class Sale {
     }
 
 }
+
+
+
 
 
 
