@@ -33,7 +33,7 @@ public class EventController {
     @GetMapping("/event/{idevent}")
     Event getEvent(@PathVariable String idevent){
         return eventRepository.findById(idevent).
-                orElseThrow(() -> new EventNotFoundException("No se encontró el evento: " + idevent));
+                orElseThrow(() -> new EventNotFoundException("No se encontró el evento con ID: " + idevent));
     }
 
     //eliminar un evento

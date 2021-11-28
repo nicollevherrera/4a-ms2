@@ -35,7 +35,7 @@ public class TicketController {
     @GetMapping("/ticket/{idticket}")
     Ticket getTicket(@PathVariable String idticket){
         return ticketRepository.findById(idticket)
-                .orElseThrow(() -> new TicketNotFoundException("No existe el ticket: " + idticket));
+                .orElseThrow(() -> new TicketNotFoundException("No existe el ticket con ID: " + idticket));
     }
 
 
