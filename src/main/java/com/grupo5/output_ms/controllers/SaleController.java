@@ -34,11 +34,14 @@ public class SaleController {
     }
 
     //traer todas las ventas
-
     @GetMapping("/sales/")
     List<Sale> listSale (){
         return saleRepository.findAll();
     }
+
+    //traer una venta por status
+    @GetMapping ("/sale/{status}")
+    List<Sale> getStatus (@PathVariable String status){return saleRepository.findByStatus(status);}
 
 
     //eliminar una venta

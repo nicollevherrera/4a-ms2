@@ -30,6 +30,12 @@ public class TicketController {
         return ticketRepository.findByName(name);
     }
 
+    //traer los tickets por organizador
+    @GetMapping("/tickets/{organizer}")
+    List <Ticket> getOrganizer(@PathVariable String organizer){
+        return ticketRepository.findByOrganizer(organizer);
+    }
+
 
     //traer ticket pot id
     @GetMapping("/ticket/{idticket}")

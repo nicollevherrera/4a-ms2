@@ -1,6 +1,7 @@
 package com.grupo5.output_ms.controllers;
 import com.grupo5.output_ms.exceptions.EventNotFoundException;
 import com.grupo5.output_ms.models.Event;
+import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.EventRepository;
 import org.springframework.web.bind.annotation.*;
 
@@ -35,6 +36,16 @@ public class EventController {
         return eventRepository.findById(idevent).
                 orElseThrow(() -> new EventNotFoundException("No se encontró el evento con ID: " + idevent));
     }
+
+    //traer los eventos por nombre
+    @GetMapping("/tickets/{name}")
+    List <Event> getName(@PathVariable String name){
+        return eventRepository.findByName(name);
+    }
+
+    //traer un evento por organizador
+    @GetMapping ("/event/{organizer}")
+    List <Event> getOrganizer(@PathVariable String organizer){return eventRepository.findByOrganizer(organizer);}
 
     //eliminar un evento
     @DeleteMapping("/event/{idevent}")
