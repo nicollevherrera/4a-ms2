@@ -36,14 +36,6 @@ public class Event {
 
     }
 
-    public void setIdevent(String idevent) {
-        this.idevent = idevent;
-    }
-
-    public String getIdevent() {
-        return idevent;
-    }
-
     public void setName(@NonNull String name) {
         this.name = name;
     }

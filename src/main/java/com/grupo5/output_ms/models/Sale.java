@@ -19,14 +19,6 @@ public class Sale {
         this.quantity = quantity;
     }
 
-    public void setIdsale(String idsale) {
-        this.idsale = idsale;
-    }
-
-    public String getIdsale() {
-        return idsale;
-    }
-
     public void setStatus(@NonNull String status) {
         this.status = status;
     }

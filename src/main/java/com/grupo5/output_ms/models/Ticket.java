@@ -39,14 +39,6 @@ public class Ticket  {
     }
 
 
-    public void setIdticket(String idticket) {
-        this.idticket = idticket;
-    }
-
-    public String getIdticket() {
-        return idticket;
-    }
-
     public void setType(@NonNull String type) {
         this.type = type;
     }
