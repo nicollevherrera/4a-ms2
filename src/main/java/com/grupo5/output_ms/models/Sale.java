@@ -11,12 +11,15 @@ public class Sale {
     private String status;
     private BigDecimal price;
     private Integer quantity;
+    @NonNull
+    private String nameEvent;
 
-    public Sale (String idsale, String status, BigDecimal price, Integer quantity) {
+    public Sale (String idsale, String status, BigDecimal price, Integer quantity, String nameEvent) {
         this.idsale = idsale;
         this.status = status;
         this.price = price;
         this.quantity = quantity;
+        this.nameEvent = nameEvent;
     }
 
     public void setStatus(@NonNull String status) {
@@ -27,6 +30,14 @@ public class Sale {
         return status;
     }
 
+    @NonNull
+    public String getNameEvent() {
+        return nameEvent;
+    }
+
+    public void setNameEvent(@NonNull String nameEvent) {
+        this.nameEvent = nameEvent;
+    }
 
     public void setPrice(BigDecimal price) {
         this.price = price;

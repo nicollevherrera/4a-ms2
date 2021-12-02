@@ -5,4 +5,5 @@ import java.util.List;
 
 public interface SaleRepository extends MongoRepository <Sale, String> {
     List<Sale> findByStatus (String status);
+    List <Sale> findByNameEvent (String nameEvent);
 }

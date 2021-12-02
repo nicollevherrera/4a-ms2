@@ -1,13 +1,11 @@
 package com.grupo5.output_ms.controllers;
 import com.grupo5.output_ms.exceptions.SaleNotFoundException;
-import com.grupo5.output_ms.models.Event;
 import com.grupo5.output_ms.models.Sale;
-import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.SaleRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 
@@ -43,6 +41,9 @@ public class SaleController {
     @GetMapping ("/sale/{status}")
     List<Sale> getStatus (@PathVariable String status){return saleRepository.findByStatus(status);}
 
+    //traer ventas por nombre del evento
+    @GetMapping ("/sale/{nameEvent}")
+    List<Sale> getNameEvent(@PathVariable String nameEvent){return saleRepository.findByNameEvent(nameEvent);}
 
     //eliminar una venta
     @DeleteMapping("/sale/{idsale}")
