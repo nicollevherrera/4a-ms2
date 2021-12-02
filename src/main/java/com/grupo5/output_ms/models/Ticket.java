@@ -15,6 +15,8 @@ public class Ticket  {
     private BigDecimal price;
     @NonNull
     private String name;
+    @NonNull
+    private String organizer;
     private String address;
     private Date date;
     private String hour;
@@ -25,7 +27,7 @@ public class Ticket  {
 
 
     public Ticket(String idticket, @NonNull String type, @NonNull BigDecimal price, @NonNull String name,
-                  String address, Date date, String hour, @NonNull String city, @NonNull String country) {
+                  String address, Date date, String hour, @NonNull String city, @NonNull String country, @NonNull String organizer) {
 
         this.idticket = idticket;
         this.type = type;
@@ -35,9 +37,17 @@ public class Ticket  {
         this.date = date;
         this.hour = hour;
         this.city = city;
+        this.organizer = organizer;
         this.country = country;
     }
 
+    public void setOrganizer(@NonNull String organizer) {
+        this.organizer = organizer;
+    }
+    @NonNull
+    public String getOrganizer() {
+        return organizer;
+    }
 
     public void setType(@NonNull String type) {
         this.type = type;

@@ -1,12 +1,11 @@
 package com.grupo5.output_ms.controllers;
-import com.grupo5.output_ms.models.Sale;
 import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.TicketRepository;
 import com.grupo5.output_ms.exceptions.TicketNotFoundException;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 
@@ -24,10 +23,10 @@ public class TicketController {
         return ticketRepository.save(ticket);
     }
 
-    //traer los tickets por nombre
-    @GetMapping("/tickets/{name}")
-    List <Ticket> getName(@PathVariable String name){
-        return ticketRepository.findByName(name);
+    //traer los tickets por tipo
+    @GetMapping("/tickets/{type}")
+    List <Ticket> getType(@PathVariable String type){
+        return ticketRepository.findByType(type);
     }
 
     //traer los tickets por organizador

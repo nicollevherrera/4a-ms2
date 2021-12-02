@@ -1,12 +1,11 @@
 package com.grupo5.output_ms.controllers;
 import com.grupo5.output_ms.exceptions.EventNotFoundException;
 import com.grupo5.output_ms.models.Event;
-import com.grupo5.output_ms.models.Ticket;
 import com.grupo5.output_ms.repositories.EventRepository;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
-import java.util.Optional;
+
 
 @RestController
 
