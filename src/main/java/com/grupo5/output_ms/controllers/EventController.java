@@ -37,7 +37,7 @@ public class EventController {
     }
 
     //traer los eventos por nombre
-    @GetMapping("/tickets/{name}")
+    @GetMapping("/events/{name}")
     List <Event> getName(@PathVariable String name){
         return eventRepository.findByName(name);
     }
