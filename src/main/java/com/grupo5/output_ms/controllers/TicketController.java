@@ -24,10 +24,10 @@ public class TicketController {
     }
 
     //traer los tickets por tipo
-    @GetMapping("/tickets/{type}")
-    List <Ticket> getType(@PathVariable String type){
-        return ticketRepository.findByType(type);
-    }
+    //@GetMapping("/tickets/{type}")
+    //List <Ticket> getType(@PathVariable String type){
+    //    return ticketRepository.findByType(type);
+    //}
 
     //traer los tickets por organizador
     @GetMapping("/tickets/{organizer}")

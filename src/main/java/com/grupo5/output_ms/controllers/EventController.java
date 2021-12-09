@@ -43,8 +43,8 @@ public class EventController {
     }
 
     //traer un evento por organizador
-    @GetMapping ("/event/{organizer}")
-    List <Event> getOrganizer(@PathVariable String organizer){return eventRepository.findByOrganizer(organizer);}
+    //@GetMapping ("/event/{organizer}")
+    //List <Event> getOrganizer(@PathVariable String organizer){return eventRepository.findByOrganizer(organizer);}
 
     //eliminar un evento
     @DeleteMapping("/event/{idevent}")

@@ -12,14 +12,14 @@ public class Sale {
     private BigDecimal price;
     private Integer quantity;
     @NonNull
-    private String nameEvent;
+    private String event;
 
-    public Sale (String idsale, String status, BigDecimal price, Integer quantity, String nameEvent) {
+    public Sale (String idsale, String status, BigDecimal price, Integer quantity, String event) {
         this.idsale = idsale;
         this.status = status;
         this.price = price;
         this.quantity = quantity;
-        this.nameEvent = nameEvent;
+        this.event = event;
     }
 
     public String getIdsale() {
@@ -35,12 +35,12 @@ public class Sale {
     }
 
     @NonNull
-    public String getNameEvent() {
-        return nameEvent;
+    public String getEvent() {
+        return event;
     }
 
-    public void setNameEvent(@NonNull String nameEvent) {
-        this.nameEvent = nameEvent;
+    public void setEvent(@NonNull String event) {
+        this.event = event;
     }
 
     public void setPrice(BigDecimal price) {

@@ -5,5 +5,5 @@ import java.util.List;
 
 public interface EventRepository extends MongoRepository <Event, String> {
     List<Event> findByName (String name);
-    List<Event> findByOrganizer (String organizer);
+    //List<Event> findByOrganizer (String organizer);
 }

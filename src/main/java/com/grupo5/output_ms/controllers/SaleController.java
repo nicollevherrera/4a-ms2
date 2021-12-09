@@ -38,12 +38,12 @@ public class SaleController {
     }
 
     //traer una venta por status
-    @GetMapping ("/sale/{status}")
-    List<Sale> getStatus (@PathVariable String status){return saleRepository.findByStatus(status);}
+   // @GetMapping ("/sale/{status}")
+    //List<Sale> getStatus (@PathVariable String status){return saleRepository.findByStatus(status);}
 
     //traer ventas por nombre del evento
-    @GetMapping ("/sale/{nameEvent}")
-    List<Sale> getNameEvent(@PathVariable String nameEvent){return saleRepository.findByNameEvent(nameEvent);}
+    //@GetMapping ("/sale/{event}")
+    //List<Sale> getEvent(@PathVariable String event){return saleRepository.findByEvent(event);}
 
     //eliminar una venta
     @DeleteMapping("/sale/{idsale}")
@@ -58,7 +58,7 @@ public class SaleController {
         old_sale.setPrice(new_sale.getPrice());
         old_sale.setQuantity(new_sale.getQuantity());
         old_sale.setStatus(new_sale.getStatus());
-        old_sale.setNameEvent(new_sale.getNameEvent());
+        old_sale.setEvent(new_sale.getEvent());
         return saleRepository.save(old_sale);
     }
 }
