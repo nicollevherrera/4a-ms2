@@ -36,6 +36,10 @@ public class Event {
 
     }
 
+    public String getIdevent() {
+        return idevent;
+    }
+
     public void setName(@NonNull String name) {
         this.name = name;
     }

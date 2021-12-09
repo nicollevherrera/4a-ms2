@@ -41,6 +41,10 @@ public class Ticket  {
         this.country = country;
     }
 
+    public String getIdticket() {
+        return idticket;
+    }
+
     public void setOrganizer(@NonNull String organizer) {
         this.organizer = organizer;
     }

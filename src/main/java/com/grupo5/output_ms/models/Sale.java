@@ -22,6 +22,10 @@ public class Sale {
         this.nameEvent = nameEvent;
     }
 
+    public String getIdsale() {
+        return idsale;
+    }
+
     public void setStatus(@NonNull String status) {
         this.status = status;
     }

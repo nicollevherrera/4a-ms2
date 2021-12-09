@@ -58,6 +58,7 @@ public class SaleController {
         old_sale.setPrice(new_sale.getPrice());
         old_sale.setQuantity(new_sale.getQuantity());
         old_sale.setStatus(new_sale.getStatus());
+        old_sale.setNameEvent(new_sale.getNameEvent());
         return saleRepository.save(old_sale);
     }
 }

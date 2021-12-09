@@ -67,6 +67,7 @@ public class TicketController {
         old_ticket.setAddress(new_ticket.getAddress());
         old_ticket.setDate(new_ticket.getDate());
         old_ticket.setHour(new_ticket.getHour());
+        old_ticket.setOrganizer(new_ticket.getOrganizer());
         return ticketRepository.save(old_ticket);
     }
 }
